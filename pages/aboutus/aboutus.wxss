@@ -1,0 +1,10 @@
+/* pages/aboutus/aboutus.wxss */
+.aboutUs_text{
+  display: inline-block;
+  /* padding: 20rpx 0 50rpx; */
+  text-indent: 50rpx;
+  
+  color: #3E3E3E ;
+  font-size: 30rpx;
+  /* text-align: center; */
+}

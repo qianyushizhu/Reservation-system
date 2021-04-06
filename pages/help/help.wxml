@@ -1,0 +1,10 @@
+
+  <view class="help_container">
+    <view class="help_container_item" wx:for="{{helpList}}" wx:key="id" bindtap="goinfo" data-shopId="{{item.id}}">
+      <view class="help_container_item_line"></view>
+      <view class="help_containeritem_text"><text>{{item.name}}</text></view>
+      <image class="help_container_item_img" src="../../img/在线办理小程序首页2.0图标/箭头.png"></image>
+    </view>
+   </view>
+    
+

@@ -1,0 +1,31 @@
+
+<view class="leixing_container">
+    <view class="leixing_header">
+      <view class="leixing_header_item">
+        <view>类型</view>
+        <image class="leixing_header_item_img"  src="../../img/mine_img/三角形.png"></image>
+      </view>
+
+      <view class="leixing_header_item">
+        <view>部门</view>
+        <image class="leixing_header_item_img" src="../../img/mine_img/三角形.png"></image>
+      </view>
+
+      <view class="leixing_header_item">
+        <view>标签</view>
+        <image class="leixing_header_item_img" src="../../img/mine_img/三角形.png"></image>
+      </view>
+
+      <view  class="leixing_header_item " id="wenzi" bindtap="gosousuo">搜索</view>
+
+    </view>
+    <view class="bottom_container">
+      <block wx:for="{{shujulist}}" wx:key='id'>
+        <view class="bottom_container_item" bindtap="gopart1" data-item="{{item}}" >{{item.name}}
+          <image src="../../img/在线办理小程序首页2.0图标/jiantou.png"></image>
+        </view>
+      </block>
+    </view>
+
+
+</view>

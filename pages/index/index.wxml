@@ -1,0 +1,164 @@
+<!-- 整个容器 -->
+<view class="container">
+  <!-- 头部所以 -->
+ <view class="header">
+   <!-- 轮播图 -->
+   <view class="header_swapper">
+    <swiper  autoplay="true" indicator-dots="true">
+     <swiper-item wx:for="{{swiperInfo}}" wx:key="index"><image class="header_swapper_img" src="{{item.imgPath}}" bindtap="goswiperinfo"></image></swiper-item>
+   </swiper>
+   </view>
+   
+   
+   
+   <view class="weui-flex">
+      <view class="weui-flex__item" >
+        <view class="placeholder">
+          <navigator url="plugin://hello-plugin/home-page">
+              去插件页面
+          </navigator>
+        </view>
+      </view>
+</view>
+
+   <!-- 套餐服务整体 -->
+   <view class="header_setmeal">
+     <!-- 下面每个item项 -->
+     <view class="header_setmeal_item" wx:for="{{serviceTypeInfo}}" wx:key="id" data-id="{{item.id}}" bindtap="gofenye" data-name="{{item.name}}">
+       <view class="header_setmeal_item_img">
+         <image src="{{item.icon}}"></image>
+       </view>
+       <view class="header_setmeal_item_text">
+         <text>套餐服务</text>
+       </view>
+     </view>
+    
+
+     
+     
+<!-- 头部最下面的新政策 -->
+     
+   </view>
+   <view class="header_newdeparture">
+     <image class="header_newdeparture_img" src="../../img/在线办理小程序首页2.0图标/新政策·心服务@2x.png"></image>
+     <text class="header_newdeparture_text">江宁行政审批政策轻松知</text>
+   </view>
+ </view>
+
+
+ <view class="main">
+   <view class="main_quick">
+
+     <view class="main_text">
+       <text class="main_text_quick">快捷服务</text>
+       <view class="main_quick_view">
+         <text class="main_text_more">更多快捷服务</text>
+        <image src="../../img/在线办理小程序首页2.0图标/箭头.png"></image>
+       </view>
+     </view>
+    </view>
+     <view class="main_container_img">
+
+       <view class="main_container">
+
+        <image class="main_img" style="display:inline-block" src="../../img/在线办理小程序首页2.0图标/快捷服务1.png">
+          <view class="main_middle">
+          <image class="main_middle_img" src="../../img/在线办理小程序首页2.0图标/快捷服务小图标1.png"></image>
+          <text id="main_result" class="main_middle_text">创建名城建设一号文</text>
+        </view>
+        </image>
+
+       </view>
+       
+       <view class="main_container">
+
+        <image class="main_img" style="display:inline-block" src="../../img/在线办理小程序首页2.0图标/快捷服务2.png">
+          <view class="main_middle">
+          <image class="main_middle_img" src="../../img/在线办理小程序首页2.0图标/快捷服务小图标2.png"></image>
+          <text class="main_middle_text">特色服务</text>
+        </view>
+        </image>
+
+            </view>
+            <view class="main_container">
+
+            <image class="main_img" style="display:inline-block" src="../../img/在线办理小程序首页2.0图标/快捷服务3.png">
+              <view class="main_middle">
+              <image class="main_middle_img" src="../../img/在线办理小程序首页2.0图标/快捷服务小图标3.png"></image>
+              <text class="main_middle_text">税惠通</text>
+            </view>
+            </image>
+
+            </view>
+            <view class="main_container">
+
+            <image class="main_img" style="display:inline-block" src="../../img/在线办理小程序首页2.0图标/快捷服务4.png">
+              <view class="main_middle">
+              <image class="main_middle_img" src="../../img/在线办理小程序首页2.0图标/快捷服务小图标4.png"></image>
+              <text class="main_middle_text">联审联办</text>
+            </view>
+            </image>
+
+            </view>
+
+
+        </view>
+
+     
+
+     
+
+   <!-- 个人服务 -->
+   <view class="mian_personage">
+     <view class="main_personage_text">
+       <text class="main_personage_text_1">个人服务</text>
+       <text>法人服务</text>
+       <text>公共服务</text>
+     </view>
+
+     <view class="mian_personage_container">
+        <view class="mian_personage_container_item">
+          <view class="mian_personage_container_item_yuan"><image src="../../img/在线办理小程序首页2.0图标/生育收养@2x.png"></image></view>
+          <text>生育收养</text>
+        </view>
+
+        <view class="mian_personage_container_item">
+          <view class="mian_personage_container_item_yuan"><image src="../../img/在线办理小程序首页2.0图标/设立变更@2x.png"></image></view>
+          <text>设立变更</text>
+        </view>
+
+        <view class="mian_personage_container_item">
+          <view class="mian_personage_container_item_yuan"><image src="../../img/在线办理小程序首页2.0图标/职业资格@2x.png"></image></view>
+          <text>职业资格</text>
+        </view>
+
+        <view class="mian_personage_container_item">
+          <view class="mian_personage_container_item_yuan"><image src="../../img/在线办理小程序首页2.0图标/行政收费@2x.png"></image></view>
+          <text>行政缴费</text>
+        </view>
+
+        <view class="mian_personage_container_item">
+          <view class="mian_personage_container_item_yuan"><image src="../../img/在线办理小程序首页2.0图标/规划建设@2x.png"></image></view>
+          <text>规划建设</text>
+        </view>
+
+        <view class="mian_personage_container_item">
+          <view class="mian_personage_container_item_yuan"><image src="../../img/在线办理小程序首页2.0图标/环保绿化@2x.png"></image></view>
+          <text>环保绿化</text>
+        </view>
+
+        <view class="mian_personage_container_item">
+          <view class="mian_personage_container_item_yuan"><image src="../../img/在线办理小程序首页2.0图标/公用事业@2x.png"></image></view>
+          <text>公用事业</text>
+        </view>
+     </view>
+    
+   </view>
+
+
+ </view>
+
+
+ <view class="footer"></view>
+  
+</view>

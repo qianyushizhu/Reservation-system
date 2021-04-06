@@ -1,0 +1,87 @@
+
+<view class="part1_container">
+<view class="part1_container_header_img">
+<image src="../../img/预约流程顶部图/1.png"></image>
+<view class="part1_container_text">
+  <view class="part1_container_text_text">办理指南</view>
+  <view class="part1_right_text">查看祥版指南<image src="../../img/mine_img/jiantou1.png"></image></view>
+</view>
+</view>
+
+<view class="part1_main">
+  <view class="part1_main_text">基本信息</view>
+  <view class="part_main_table">
+    <view class="part_main_table_item">
+      <text class="part_main_table_item_text1">事项类型</text>
+      <text class="part_main_table_item_text2">{{part1Info.matteType}}</text>
+    </view>
+    <view class="part_main_table_item">
+      <text class="part_main_table_item_text1">实施编码</text>
+      <text class="part_main_table_item_text2">{{part1Info.businessCode}}</text>
+    </view>
+    <view class="part_main_table_item">
+      <text class="part_main_table_item_text1" id="common1">业务办理项编码</text>
+      <text class="part_main_table_item_text2" id="common">{{part1Info.implementCode}}</text>
+    </view>
+   
+  </view>
+
+  <view class="part1_middle">
+    <view class="part1_middle_text">办理材料</view>
+
+    <!-- table -->
+          <view class="table">
+      <view class="tr bg-w tr4">
+      <view class="th th1">序号</view>
+      <view class="th">材料名称</view>
+      <view class="th">表格下载</view>
+      <view class="th ">详情</view>
+      </view>
+      <block wx:for="{{tablelist}}" wx:key="id">
+
+
+        <view class="tr">
+      <view class="td td1">{{index+1}}</view>
+      <view class="td">{{item.name}}</view>
+      <view class="td table_line" bindtap="uplodefiletable" data-index="{{item}}">实例样表</view>
+      <view wx:if="{{item.isshow}}" class="td table_line" id="item1" bindtap="replaceInfo" data-index="{{index}}">{{item.content}}</view>
+      <view wx:else class="td table_line" id="item1" bindtap="replaceInfo" data-index="{{index}}">查看更多</view>
+      </view>
+
+      </block>
+      </view>
+
+
+  </view>
+  <!-- 办理流程 -->
+  <view>
+    <view class="part1_middle_text">办理流程</view>
+    <!-- table -->
+    <view class="table">
+      <view class="tr bg-w tr4">
+      <view class="th th1">序号</view>
+      <view class="th">办理环节</view>
+      <view class="th">办理时限</view>
+      <view class="th ">审批标准</view>
+      </view>
+      <block wx:for="{{tablelist2}}" wx:key="id">
+
+
+        <view class="tr">
+      <view class="td td1">{{index+1}}</view>
+      <view class="td">{{item.link}}</view>
+      <view class="td ">{{item.timeLimit}}</view>
+      <view class="td ">{{item.standard}}</view>
+      </view>
+
+      </block>
+      </view>
+  </view>
+  <view>
+
+  </view>
+</view>
+    <view>
+      <button style="color:#FFF; background: #0091FF; width:654rpx;border-radius: 15rpx;line-height:80rpx" bindtap="gopart2">下一步</button>
+    </view>
+</view>

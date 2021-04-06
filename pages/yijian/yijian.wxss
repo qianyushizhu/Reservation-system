@@ -1,0 +1,77 @@
+@import "../../lib/weui.wxss";
+.picker{
+    padding: 13px;
+    background-color: #FFFFFF;
+    background: #FFFFFF;
+    border: 1px solid rgba(217,217,217,1);
+    /* width: 670rpx !important; */
+    height: 32rpx !important;
+    vertical-align: middle;
+    
+color: #8D8D8D ;
+border-radius: 20rpx;
+font-size: 28rpx;
+margin-bottom: 30rpx;
+}
+.container_yijian{
+    padding: 100rpx 40rpx;
+    /* background-color: #bfa; */
+}
+.section__title{
+    
+color: #555555 ;
+line-height: 44rpx;
+font-size: 28rpx;
+margin-top: -40rpx;
+margin-bottom: 20rpx;
+opacity: 60%;
+}
+.yijian_text{
+    
+    color: #555555 ;
+    line-height:44rpx;
+    font-size: 28rpx;
+    margin-bottom: 30rpx;
+}
+.yijian_input{
+    width: 670rpx;
+    height: 208rpx;
+    border: 2rpx solid rgba(217,217,217,1);
+    margin-bottom: 30rpx;
+    border-radius: 20rpx;
+    font-size: 28rpx;
+}
+.yijian_bottom_text{
+    
+    color: #555555 ;
+    line-height:44rpx;
+    font-size: 28rpx;
+    margin-bottom: 30rpx;
+}
+.yijian_bottom_container{
+    width: 220rpx;
+    height: 220rpx;
+    border: 2rpx solid rgba(217,217,217,1);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.yijian_bottom_img{
+    width: 60rpx;
+    height: 60rpx;
+
+}
+.yijian_button{
+    background: #0091FF;
+    width: 654rpx !important;
+    height: 112rpx !important;
+    border-radius: 20rpx;
+    font-size: 32rpx !important;
+    line-height: 82rpx;
+    font-weight: 600 !important;
+    
+    color: #FFFFFF ;
+    text-align: center;
+    position: relative;
+    top: 150rpx;
+}

@@ -1,0 +1,48 @@
+.help_container{
+  padding: 50rpx 40rpx;
+}
+.help_container_item{
+    position: relative;
+    width: 670rpx;
+    height: 72rpx;
+    background: #FFFFFF;
+    border: 1px solid rgba(229,236,237,1);
+    box-shadow: 0rpx 22rpx 28rpx -20rpx rgba(229,236,237,1);
+    line-height: 72rpx;
+    border-radius: 10rpx;
+    display: flex;
+    margin-bottom:40rpx;
+    align-items: center;
+}
+.help_containeritem_text{
+  font-size: 24rpx;
+ 
+  color: #4F6172 100%;
+  line-height: 34rpx;
+  opacity: 60%;
+  margin-left: 50rpx;
+}
+.help_container_item_line{
+  width: 8rpx;
+  height: 71rpx;
+  background-color: rgb(117,155,250);
+  position: relative;
+  top: -0.5rpx;
+  
+  border-radius: 5rpx;
+}
+.help_container_item_img{
+  width: 40rpx;
+  height: 40rpx;
+  position: absolute;
+  right: 45rpx;
+
+}
+
+.weui-cell {
+  font-size: 24rpx !important;
+  background: #FFFFFF;
+/* border: 1px solid rgba(229,236,237,1); */
+box-shadow: 0rpx 22rpx 28rpx -20rpx rgba(229,236,237,1);
+opacity: 75%;
+}

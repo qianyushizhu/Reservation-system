@@ -1,0 +1,25 @@
+
+<view class="container_yijian">
+  <view class="section">
+  <view class="section__title">问题类型</view>
+  <picker bindchange="bindPickerChange" value="{{index}}" range="{{selectItem}}" mode = "selector" >
+    <view class="picker">
+     <block wx:if="{{isshow===false}}">请选择问题类型</block> <block wx:else>{{selectItem[index]}}</block> 
+    </view>
+  </picker>
+</view>
+
+   <view>
+    <view class="yijian_text">问题描述</view>
+    <textarea name="" id="" cols="30" rows="10" class="yijian_input" placeholder="请输入问题描述" bindblur="bindTextAreaBlur"></textarea>
+   </view>
+
+   <view>
+     <view class="yijian_bottom_text">问题照片</view>
+     <view class="yijian_bottom_container" bindtap="upload_img">
+       <image wx:if="{{issuccess===false}}" class="yijian_bottom_img" src="../../img/mine_img/jia2.png"></image>
+       <image wx:else class="yijian_bottom_img" src="../../img/mine_img/wancheng.png"></image>
+     </view>
+   </view>
+   <button class="yijian_button" form-type="submit"  bindtap="uplodeinfo">提交反馈</button>
+</view>

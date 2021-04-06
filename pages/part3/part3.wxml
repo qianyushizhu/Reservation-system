@@ -1,0 +1,33 @@
+<!--pages/part3/part3.wxml-->
+<view class="part1_container">
+  <view class="part1_container_header_img">
+<image src="../../img/预约流程顶部图/3.png"></image>
+<view class="part1_container_text">
+  <view class="part1_container_text_text">办理指南</view>
+  <view class="part1_right_text">我要咨询<image src="../../img/mine_img/jiantou1.png"></image></view>
+</view>
+</view>
+    <view class="part3_main_container">
+     <view class="part3_main_container_text">
+      <view><image src="../../img/woshou.png"></image></view>
+      <view class="text_container"><text class="part3_main_container_text_text1">你好，我们正在全力审核材料，预计<text class="part3_main_container_text_text2">7个工作日</text>内完成。</text></view>
+     </view>
+
+     <view class="part3_footer_container">
+        <view wx:for="{{part3list}}" wx:key='id' style="display:flex" class="part3_footer_container_item">
+          <view class="part3_yuan" wx:if="{{item.supplementFlag===-1}}">{{index+1}}</view> 
+          <view wx:elif="{{item.supplementFlag===0}}"><image src="../../img/wancheng2.png"></image></view>
+          <view wx:else><image src="../../img/shibai.png"></image></view>
+          <view class="part3_footer_text">{{item.materialName}}</view>
+
+       
+          
+        </view>
+        <button wx:if="{{allobj.supplementFlag==0}}" style="color:#FFF; background: #0091FF; width:654rpx;border-radius: 15rpx;line-height:80rpx" >受理通知书</button>
+        <view wx:elif="{{allobj.supplementFlag==-1}}"></view>
+    <button wx:else style="color:#FFF; background: #FF7400; width:654rpx;border-radius: 15rpx;line-height:80rpx" bindtap="buzhengtongzhishu">补正通知书</button>
+       
+     </view>
+    </view>
+    
+</view>

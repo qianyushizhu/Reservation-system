@@ -1,0 +1,62 @@
+/* pages/fenyezileixin/fenyezileixin.wxss */
+.leixing_container{
+  
+  
+  color: #3C5063 ;
+  opacity: 80%;
+  font-size: 24rpx;
+}
+.leixing_container image{
+  width: 20rpx;
+  height: 20rpx;
+}
+.leixing_header{
+  display: flex;
+  width: 750rpx;
+  height: 128rpx;
+  background: #FFFFFF;
+box-shadow: 0px 2px 20px 0px rgba(0,0,0,0.09);
+/* justify-content: center;
+align-items: center; */
+
+}
+.leixing_header_item{
+  flex: 1;
+  position: relative;
+  left: 60rpx;
+  top: 50rpx;
+}
+.leixing_header_item_img{
+  position: relative;
+  left: 58rpx;
+  top: -36rpx;
+}
+#wenzi{
+  color: #0091FF;
+  font-size: 28rpx;
+  font-weight: 600;
+}
+.bottom_container{
+  padding: 40rpx 48rpx;
+
+}
+.bottom_container_item{
+  font-size: 28rpx;
+  font-weight: 550;
+  position: relative;
+  box-sizing: border-box;
+  width: 654rpx;
+  height: 112rpx;
+  background: #FFFFFF;
+border: 4rpx solid rgba(229,236,237,1);
+border-radius: 20rpx;
+line-height: 112rpx;
+padding: 0  40rpx 40rpx;
+margin-bottom: 20rpx;
+}
+.bottom_container_item image{
+  
+ position: absolute;
+ right: 20rpx;
+ top: 45.5rpx;
+}

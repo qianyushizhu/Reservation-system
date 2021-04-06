@@ -1,0 +1,3 @@
+<!--pages/aboutus/aboutus.wxml-->
+<text class="aboutUs_text">{{aboutUs}}</text>
+

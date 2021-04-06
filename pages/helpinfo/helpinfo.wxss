@@ -1,0 +1,9 @@
+/* pages/helpinfo/helpinfo.wxss */
+.heoptext{
+  text-indent: 50rpx !important;
+  display: inline-block;
+}
+.help_questino{
+  margin-bottom: 20rpx;
+  font-weight: 800;
+}

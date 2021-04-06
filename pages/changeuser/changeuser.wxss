@@ -1,0 +1,59 @@
+/* pages/changeuser/changeuser.wxss */
+.changeInfo_container_item image{
+    width: 42rpx;
+    height: 42rpx;
+    position: relative;
+    top: 82rpx;
+    left: -60rpx;
+}
+.changeInfo_container{
+  padding: 80rpx 80rpx 50rpx;
+}
+.changeInfo_container_item input{
+  background: #FAFAFA;
+border: 1px solid rgba(242,242,242,1);
+width: 600rpx;
+border-radius: 20rpx;
+height: 92rpx;
+}
+.qiyeimg{
+  float: right;
+  position: relative;
+  
+}
+.yijian_bottom_text{
+ 
+  color: #555555 ;
+  line-height:44rpx;
+  font-size: 28rpx;
+  margin-bottom: 30rpx;
+  margin-top: 20rpx;
+}
+.yijian_bottom_container{
+  width: 220rpx;
+  height: 220rpx;
+  border: 2rpx solid rgba(217,217,217,1);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.yijian_bottom_img{
+  width: 60rpx;
+  height: 60rpx;
+
+}
+.yijian_button{
+  background: #0091FF;
+  width: 654rpx !important;
+  height: 112rpx !important;
+  border-radius: 20rpx;
+  font-size: 32rpx !important;
+  line-height: 82rpx;
+  font-weight: 600 !important;
+  
+  color: #FFFFFF ;
+  text-align: center;
+  position: relative;
+  top: 150rpx;
+  left: -31rpx;
+}

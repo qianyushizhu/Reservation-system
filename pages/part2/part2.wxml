@@ -1,0 +1,32 @@
+<!--pages/part2/part2.wxml-->
+<view class="part1_container_header_img">
+<image src="../../img/预约流程顶部图/2.png"></image>
+<view class="part1_container_text">
+  <view class="part1_container_text_text">提交材料</view>
+  <view class="part1_right_text">我要咨询</view>
+</view>
+
+ <!-- table -->
+ <view class="table">
+      <view class="tr bg-w tr4">
+      <view class="th th1">序号</view>
+      <view class="th">材料名称</view>
+      <view class="th">上传资料</view>
+      
+      </view>
+      <block wx:for="{{part2tablelist}}" wx:key="id">
+        <view class="tr">
+      <view class="td td1">{{index+1}}</view>
+      <view class="td">{{item.name}}</view>
+      <view wx:if="{{item.isshangchuan}}"class="td table_line" bindtap="shangchuanpicture" data-index="{{index}}" bindtap="shangchuanpicture"><image class="wanchengpng" src="../../img/mine_img/wancheng.png"></image></view>
+      <view wx:else class="td table_line" bindtap="shangchuanpicture" data-index="{{index}}" bindtap="shangchuanpicture">点击上传</view>
+      
+      </view>
+
+      </block>
+      </view>
+
+      <view>
+      <button style="color:#FFF; background: #0091FF; width:654rpx;border-radius: 15rpx;line-height:80rpx" bindtap="gopart3">提交材料</button>
+    </view>
+</view>

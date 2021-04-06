@@ -1,0 +1,8 @@
+<!--pages/myapplication/myapplication.wxml-->
+<view class="myapplication_container">
+  <view class="myapplication_container_item" wx:for="{{applicationLIst}}" wx:key="id" bindtap="gopart4" data-item="{{item}}">
+    <view class="item1">{{item.type}}</view>
+    <view class="item2">{{item.approveStatus}}</view>
+    
+  </view>
+</view>

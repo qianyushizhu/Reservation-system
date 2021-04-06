@@ -1,0 +1,16 @@
+<!--pages/classify/classify.wxml-->
+<view class="classify_container">
+    <view class="classify_header">
+    <view class="first {{currentindex==0 ? 'currentclass' : ''}} " bindtap="setindex0"><text>公共资源</text></view>
+    <view class="first {{currentindex==1 ? 'currentclass' : ''}}" bindtap="setindex1"><text>政务热线</text></view>
+    <view class="{{currentindex==2 ? 'currentclass' : ''}}" bindtap="setindex2"><text>便民服务</text></view>
+    </view>
+
+    <view class="classify_footer">
+      <view class="classify_footer_item" wx:for="{{infolist}}" wx:key="id" data-item="{{item}}" bindtap="gofenyezileixin">
+        <image class="classify_footer_item_img" src="{{item.icon}}"></image>
+        <view class="classify_footer_item_text">{{item.name}}</view>
+        <image  class="classify_footer_item_img2" src="../../img/在线办理小程序首页2.0图标/箭头.png"></image>
+      </view>
+    </view>
+</view>

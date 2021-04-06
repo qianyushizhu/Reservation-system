@@ -1,0 +1,29 @@
+.myapplication_container{
+  padding: 20rpx 48rpx;
+}
+.myapplication_container_item{
+  display: flex;
+  border: 2rpx solid rgba(229,236,237,1);
+  width: 654rpx;
+  height: 104rpx;
+  align-items: center;
+  margin-bottom: 20rpx;
+  border-radius: 10rpx;
+  font-size: 25rpx;
+ 
+  justify-content: space-between;
+  
+  
+}
+.item1{
+ margin-left: 30rpx;
+ font-weight: 500;
+ font-size: 30rpx;
+ opacity: 0.7;
+ color: #1890FF ;
+}
+.item2{
+  margin-right: 50rpx;
+  opacity: 0.9;
+  font-size: 25rpx;
+}

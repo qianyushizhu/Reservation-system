@@ -1,0 +1,64 @@
+<!--pages/mine/mine.wxml-->
+<view class="mine_bgc">
+  <image src="../../img/mine_img/tongzhi.png"></image>
+</view>
+<view class="main_container">
+  <view class="mine_header">
+  <button wx:if="{{islogin===false}}" class="mine_header_button" bindtap="goLogin" bindgetuserinfo="handleGetUserInfo" open-type="getUserInfo">请登录</button>
+  <view wx:elif='{{islogin===true}}' class="main_container_header_top">
+    <image class="main_container_header_top_img" src="{{userInfo.headImg}}"></image>
+    <view class="main_container_header_top_text">
+      <view class="main_container_header_top_text_name">{{userInfo.name}}</view>
+      <view class="main_container_header_top_text_conmment">{{userInfo.phone}}</view>
+      <view class="main_container_header_top_text_conmment">{{userInfo.company}}</view>
+    </view>
+    <image class="main_container_header_top_sezhi" src="../../img/mine_img/shezhi.png" bindtap="gochangeuser"></image>
+    <image class="qiyebiaozhi" src="../../img/mine_img/qiyebiaozhi.png"></image>
+  </view>
+  <view wx:elif='{{islogin===true}}' class="line_header"></view>
+  <view wx:if='{{islogin===true}}' class="main_container_header_bottom">
+    <view class="main_container_header_bottom_item">
+      <view class="main_container_header_bottom_item_tittle">审核中</view>
+      <view class="orange">{{inReviewNum}}</view>
+    </view>
+    <view class="main_container_header_bottom_item">
+      <view class="main_container_header_bottom_item_tittle">待补充</view>
+      <view class="blue">{{toBeAddedNum}}</view>
+    </view>
+    <view class="main_container_header_bottom_item">
+      <view class="main_container_header_bottom_item_tittle">被驳回</view>
+      <view class="red">{{rejectNum}}</view>
+    </view>
+  </view>
+</view>
+<view class="mine_middle">
+  <view bindtap="goapplication">
+    <image class="mine_middle_img" src="../../img/mine_img/wodeshenqing.png"></image>
+  <view class="mine_middle_top">我的申请</view>
+  </view>
+  <view class="line"></view>
+  <image class="mine_middle_img" src="../../img/mine_img/wodeqiye.png"></image>
+
+  <view class="mine_middle_bottom">我的企业</view>
+</view>
+<view class="mine_footer">
+ <view bindtap="goHeip">
+  <image class="mine_middle_img" src="../../img/mine_img/bangzhuzhongxin.png"></image>
+
+<view class="mine_footer_top">帮助中心</view>
+ </view>
+  <view class="line"></view>
+ <view bindtap="goYiJian">
+  <image class="mine_middle_img" src="../../img/mine_img/yijianfankui.png"></image>
+
+<view class="mine_footer_middle">意见反馈</view>
+ </view>
+  <view class="line"></view>
+  <view>
+    <image class="mine_middle_img" src="../../img/mine_img/guanyuwomen.png"></image>
+    
+  <view class="mine_footer_bottom" bindtap="goAboutUs">关于我们</view>
+  </view>
+</view>
+</view>
+

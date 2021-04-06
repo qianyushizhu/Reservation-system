@@ -1,0 +1,10 @@
+<!--pages/helpinfo/helpinfo.wxml-->
+<!-- <view>
+  <text>问题：</text>
+  <text></text>
+</view> -->
+<view>
+  <view class="help_questino">解答：</view>
+  
+  <text class="heoptext">{{helpInfo}}</text>
+</view>
