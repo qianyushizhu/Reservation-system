@@ -16,9 +16,9 @@
 
    <view>
      <view class="yijian_bottom_text">问题照片</view>
-     <view class="yijian_bottom_container" bindtap="upload_img">
-       <image wx:if="{{issuccess===false}}" class="yijian_bottom_img" src="../../img/mine_img/jia2.png"></image>
-       <image wx:else class="yijian_bottom_img" src="../../img/mine_img/wancheng.png"></image>
+     <view class="yijian_bottom_container" >
+       <image wx:if="{{issuccess===false}}" class="yijian_bottom_img" bindtap="upload_img" src="../../img/mine_img/jia2.png"></image>
+       <image wx:else class="yijian_bottom_img" src="{{imgPaths[0]}}" bindlongpress="deleteImg" data-src="{{imgPaths[0]}}" bindtap="preview"></image>
      </view>
    </view>
    <button class="yijian_button" form-type="submit"  bindtap="uplodeinfo">提交反馈</button>

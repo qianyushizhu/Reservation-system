@@ -47,7 +47,12 @@ Page({
         success(res){
           console.log(res)
           if (res.statusCode === 200) {
-            
+            wx.saveImageToPhotosAlbum({
+              filePath: res.tempFilePath,
+            })
+           wx.showToast({
+             title: '保存成功，请在手机上查看',
+           })
               
             
           }

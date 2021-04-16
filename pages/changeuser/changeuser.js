@@ -9,9 +9,9 @@ Page({
     
       name:null,
       phone:null,
-      company:null
+      company:null,
       
-      // headImg:[]
+      headImg:[]
     
      
       
@@ -37,39 +37,134 @@ Page({
       company:e.detail.value
     })
   },
+  preview(e){
+    
+    var _this=this
+  
+    let src=e.currentTarget.dataset.src
+    
+    wx.previewImage({
+      current: src, // 当前显示图片的http链接
+      urls: _this.data.headImg// 需要预览的图片http链接列表
+    })
+
+
+  },
+  findindex(arr,obj) {
+    let i = arr.length;
+    while (i--) {
+     if (arr[i] === obj) {
+      return i;
+     }
+    }
+    return false;
+  },
+  deleted(e){
+    var that=this
+    // console.log(e.currentTarget.dataset.imgsrc)
+    let currentimg=e.currentTarget.dataset.src
+    let images=that.data.headImg
+    wx.showModal({
+      title: '提示',
+      content: '确定要删除此图片吗？',
+      success: function (res) {
+        if (res.confirm) {
+          console.log('点击确定了');
+          images.splice(that.findindex(images,currentimg), 1);
+        } else if (res.cancel) {
+          console.log('点击取消了');
+          return false;
+        }
+        that.setData({
+          headImg:images,
+          yijianissuccess:false
+        });
+      }
+    })
+
+  },
+  checkphone(){
+    var reg_tel = /^(13[0-9]|14[01456879]|15[0-35-9]|16[2567]|17[0-8]|18[0-9]|19[0-35-9])\d{8}$/;
+    let phone = this.data.phone;
+    if(!reg_tel.test(phone)){ 
+      wx.showToast({
+        title: '手机号格式不对',
+        icon:'none'
+      })
+    } 
+  },
   changeuplodeinfo(){
     let that=this
-    // this.setData({
-    //   params:{
-    //     // headImg:wx.getStorageSync('path'),
-    //   name:wx.getStorageSync('userInfo2').name,
-    //   phone:wx.getStorageSync('userInfo2').phone,
-    //   company:wx.getStorageSync('userInfo2').company
-    //   }
-    // })
-    // console.log(this.data.params)
+    var reg_tel = /^(13[0-9]|14[01456879]|15[0-35-9]|16[2567]|17[0-8]|18[0-9]|19[0-35-9])\d{8}$/;
+    let phone = this.data.phone;
+    if(!reg_tel.test(phone)){ 
+      wx.showToast({
+        title: '手机号格式不对',
+        icon:'none'
+      })
+    } else{
+      wx.request({
+        url: 'http://8.140.181.9:8816/reservation/sysUser/login/user?name='+that.data.name+'&phone='+that.data.phone+'&company='+that.data.company, 
+        method:'PUT',
+        header:{
+         "Content-Type":"application/json",
+         authorization:wx.getStorageSync('accessToken')
+       },
+       success(res){
+         console.log('success')
+         console.log(res)
+         let list =wx.getStorageSync('userInfo2')
+         console.log(list)
+         list.phone = that.data.phone
+         wx.setStorage({
+           data: list,
+           key: 'userInfo2',
+         })
+        //  that.getUser()
+         wx.showToast({
+          title: '修改成功',
+        })
+         wx.switchTab({
+           url: "/pages/mine/mine"
+         })
+        //  wx.navigateTo({
+        //    url: '/pages/mine/mine',
+        //  })
+        // wx.navigateBack({
+        //   delta: 1,
+        // })
+         
+        
+       }
+      })
+    }
     
+    
+  },
+ getUser(){
+    var that=this
     wx.request({
-      url: 'http://8.140.181.9:8816/reservation/sysUser/login/user?name='+that.data.name+'&phone='+that.data.phone+'&company='+that.data.company, 
-      method:'PUT',
+      url: 'http://8.140.181.9:8816/reservation/sysUser/personal/center',
+      method:'GET',
       header:{
        "Content-Type":"application/json",
        authorization:wx.getStorageSync('accessToken')
      },
      success(res){
-       console.log('success')
+      wx.setStorageSync("userInfo2",res.data.data.userInfo)
        console.log(res)
-
-       wx.navigateBack({
-        delta: 1,
-      })
-      wx.showToast({
-        title: '修改成功',
-      })
+       that.setData({
+          inReviewNum:res.data.data.inReviewNum,
+          toBeAddedNum:res.data.data.toBeAddedNum,
+          rejectNum:res.data.data.rejectNum,
+          userInfo:res.data.data.userInfo,
+          islogin:true
+       })
+     
      }
     })
+  
   },
-
   chengepload_img(){
     var that=this
     wx.chooseImage({
@@ -90,12 +185,7 @@ Page({
         success(res1){
           let data=JSON.parse(res1.data)
           console.log(data)
-          // let data=res1.data.data
-          // let baes=data.data.readFileSync(data.data,"base64")
-          // console.log(baes)
-         
-
-          // console.log(data)
+          
           wx.setStorageSync('path', [data.data])
           console.log('success')
           that.setData({

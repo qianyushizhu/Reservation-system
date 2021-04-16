@@ -68,7 +68,8 @@ font-size: 24rpx;
  .td {
    height: 100%;
   width:40%;
-  
+  display: flex;
+  align-items: center;
   justify-content: center;
   text-align: center;
   border-right:2rpx solid rgba(229,236,237,1);

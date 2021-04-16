@@ -11,7 +11,7 @@
    
    
    
-   <view class="weui-flex">
+   <!-- <view class="weui-flex">
       <view class="weui-flex__item" >
         <view class="placeholder">
           <navigator url="plugin://hello-plugin/home-page">
@@ -19,7 +19,7 @@
           </navigator>
         </view>
       </view>
-</view>
+</view> -->
 
    <!-- 套餐服务整体 -->
    <view class="header_setmeal">
@@ -29,7 +29,7 @@
          <image src="{{item.icon}}"></image>
        </view>
        <view class="header_setmeal_item_text">
-         <text>套餐服务</text>
+         <text>{{item.name}}</text>
        </view>
      </view>
     
@@ -57,102 +57,53 @@
        </view>
      </view>
     </view>
-     <view class="main_container_img">
+     <view class="main_container_img" >
 
-       <view class="main_container">
+       <view class="main_container" wx:for="{{quickService}}" wx:key='index' data-id="{{item.id}}" bindtap="gofenye" data-name="{{item.name}}">
 
-        <image class="main_img" style="display:inline-block" src="../../img/在线办理小程序首页2.0图标/快捷服务1.png">
+        <image class="main_img"  src="{{item.img}}">
           <view class="main_middle">
-          <image class="main_middle_img" src="../../img/在线办理小程序首页2.0图标/快捷服务小图标1.png"></image>
-          <text id="main_result" class="main_middle_text">创建名城建设一号文</text>
+          <image class="main_middle_img" src="{{item.icon}}"></image>
+          <text id="main_result" class="main_middle_text">{{item.name}}</text>
         </view>
         </image>
 
        </view>
        
-       <view class="main_container">
-
-        <image class="main_img" style="display:inline-block" src="../../img/在线办理小程序首页2.0图标/快捷服务2.png">
-          <view class="main_middle">
-          <image class="main_middle_img" src="../../img/在线办理小程序首页2.0图标/快捷服务小图标2.png"></image>
-          <text class="main_middle_text">特色服务</text>
-        </view>
-        </image>
-
-            </view>
-            <view class="main_container">
-
-            <image class="main_img" style="display:inline-block" src="../../img/在线办理小程序首页2.0图标/快捷服务3.png">
-              <view class="main_middle">
-              <image class="main_middle_img" src="../../img/在线办理小程序首页2.0图标/快捷服务小图标3.png"></image>
-              <text class="main_middle_text">税惠通</text>
-            </view>
-            </image>
-
-            </view>
-            <view class="main_container">
-
-            <image class="main_img" style="display:inline-block" src="../../img/在线办理小程序首页2.0图标/快捷服务4.png">
-              <view class="main_middle">
-              <image class="main_middle_img" src="../../img/在线办理小程序首页2.0图标/快捷服务小图标4.png"></image>
-              <text class="main_middle_text">联审联办</text>
-            </view>
-            </image>
-
-            </view>
+       
 
 
         </view>
 
      
-
+      </view>
      
 
    <!-- 个人服务 -->
    <view class="mian_personage">
      <view class="main_personage_text">
-       <text class="main_personage_text_1">个人服务</text>
-       <text>法人服务</text>
-       <text>公共服务</text>
+       <text  class="{{currentindex== 1? 'main_personage_text_1' :''}}" bindtap="setindex1">个人服务</text>
+       <text  class="{{currentindex== 2? 'main_personage_text_1' :''}}" bindtap="setindex2">法人服务</text>
+       <text  class="{{currentindex== 3? 'main_personage_text_1' :''}}" bindtap="setindex3">公共服务</text>
      </view>
 
-     <view class="mian_personage_container">
-        <view class="mian_personage_container_item">
-          <view class="mian_personage_container_item_yuan"><image src="../../img/在线办理小程序首页2.0图标/生育收养@2x.png"></image></view>
-          <text>生育收养</text>
+     <view wx:if="{{currentindex== 1}}" class="mian_personage_container">
+        <view class="mian_personage_container_item" wx:for="{{personalService}}" wx:key='index'data-id="{{item.id}}" bindtap="gofenye" data-name="{{item.name}}">
+          <view class="mian_personage_container_item_yuan"><image src="{{item.icon}}"></image></view>
+          <text>{{item.name}}</text>
         </view>
-
-        <view class="mian_personage_container_item">
-          <view class="mian_personage_container_item_yuan"><image src="../../img/在线办理小程序首页2.0图标/设立变更@2x.png"></image></view>
-          <text>设立变更</text>
+   </view>
+   <view wx:elif="{{currentindex==2}}" class="mian_personage_container">
+        <view class="mian_personage_container_item" wx:for="{{legalPersonService}}" wx:key='index' data-id="{{item.id}}" bindtap="gofenye" data-name="{{item.name}}">
+          <view class="mian_personage_container_item_yuan"><image src="{{item.icon}}"></image></view>
+          <text>{{item.name}}</text>
         </view>
-
-        <view class="mian_personage_container_item">
-          <view class="mian_personage_container_item_yuan"><image src="../../img/在线办理小程序首页2.0图标/职业资格@2x.png"></image></view>
-          <text>职业资格</text>
+   </view>
+   <view wx:else class="mian_personage_container">
+        <view class="mian_personage_container_item" wx:for="{{publicService}}" wx:key='index' data-id="{{item.id}}" bindtap="gofenye" data-name="{{item.name}}">
+          <view class="mian_personage_container_item_yuan"><image src="{{item.icon}}"></image></view>
+          <text>{{item.name}}</text>
         </view>
-
-        <view class="mian_personage_container_item">
-          <view class="mian_personage_container_item_yuan"><image src="../../img/在线办理小程序首页2.0图标/行政收费@2x.png"></image></view>
-          <text>行政缴费</text>
-        </view>
-
-        <view class="mian_personage_container_item">
-          <view class="mian_personage_container_item_yuan"><image src="../../img/在线办理小程序首页2.0图标/规划建设@2x.png"></image></view>
-          <text>规划建设</text>
-        </view>
-
-        <view class="mian_personage_container_item">
-          <view class="mian_personage_container_item_yuan"><image src="../../img/在线办理小程序首页2.0图标/环保绿化@2x.png"></image></view>
-          <text>环保绿化</text>
-        </view>
-
-        <view class="mian_personage_container_item">
-          <view class="mian_personage_container_item_yuan"><image src="../../img/在线办理小程序首页2.0图标/公用事业@2x.png"></image></view>
-          <text>公用事业</text>
-        </view>
-     </view>
-    
    </view>
 
 

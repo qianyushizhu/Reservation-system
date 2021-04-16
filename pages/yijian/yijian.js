@@ -9,7 +9,7 @@ Page({
     seletList:[],
     selectItem:[],
     selectId:[],
-    index:0,
+    index:null,
     isshow:false,
     issuccess:false,
     imgPaths:[]
@@ -39,59 +39,96 @@ Page({
      }
     })
   },
-  
+  findindex(arr,obj) {
+    let i = arr.length;
+    while (i--) {
+     if (arr[i] === obj) {
+      return i;
+     }
+    }
+    return false;
+  },
+  deleteImg(e){
+    var that=this
+    // console.log(e.currentTarget.dataset.imgsrc)
+    let currentimg=e.currentTarget.dataset.src
+    let images=that.data.imgPaths
+    wx.showModal({
+      title: '提示',
+      content: '确定要删除此图片吗？',
+      success: function (res) {
+        if (res.confirm) {
+          console.log('点击确定了');
+          images.splice(that.findindex(images,currentimg), 1);
+        } else if (res.cancel) {
+          console.log('点击取消了');
+          return false;
+        }
+        that.setData({
+          imgPaths:images,
+          issuccess:false
+        });
+      }
+    })
+
+  },
+  preview(e){
+    var _this=this
+    let src=e.currentTarget.dataset.src
+    wx.previewImage({
+      current: src, // 当前显示图片的http链接
+      urls: _this.data.imgPaths// 需要预览的图片http链接列表
+    })
+  },
   bindTextAreaBlur(e){
-      // console.log(e.detail.value)
+      
       this.setData({
         textvalue:e.detail.value
       })
-      // console.log(e.detail.value)
+      
 
   },
-  // getphone(e){
-  //   console.log(e)
-  // },
+  
   uplodeinfo(){
     let that=this
-    // this.getphone()
-    console.log(that.data.imgPaths)
-    // wx.showLoading({
-    //   title: '上传中',
-    // })
-    wx.request({
-      url: 'http://8.140.181.9:8816/reservation/opinion',
-      method:'POST',
-      data:{
-        content:that.data.textvalue,
-        imgPaths:that.data.imgPaths,
-        phone:'17751335552',
-        typeId:that.data.selectId[that.data.index]
-      },
-      header:{
-       "Content-Type":"application/json",
-       authorization:wx.getStorageSync('accessToken')
-     },
-     success(res){
-       console.log('success')
-       console.log(res)
-       wx.navigateBack({
-        delta: 1,
-      })
-      // wx.hideLoading({
-      //   success: (res) => {
-      //    console.log(res)
-      //   },
-      // })
+    console.log(this.data.textvalue,this.data.imgPaths.length,this.data.selectId[this.data.index])
+    if(this.data.textvalue==''|| this.data.imgPaths.length==0 || this.data.selectId[this.data.index]==null){
       wx.showToast({
-        title: '感谢您的反馈，已成功提交',
+        title: '请补充完整',
       })
- 
-     }
-    })
+    }else{
+      wx.request({
+        url: 'http://8.140.181.9:8816/reservation/opinion',
+        method:'POST',
+        data:{
+          content:that.data.textvalue,
+          imgPaths:that.data.imgPaths,
+          phone:'17751335552',
+          typeId:that.data.selectId[that.data.index]
+        },
+        header:{
+         "Content-Type":"application/json",
+         authorization:wx.getStorageSync('accessToken')
+       },
+       success(res){
+         console.log('success')
+         console.log(res)
+         wx.navigateBack({
+          delta: 1,
+        })
+        
+        wx.showToast({
+          title: '感谢您的反馈，已成功提交'
+        })
+   
+       }
+      })
+    }
+    
+    
+   
   },
-  uplodefire(){
-
-  },
+  
   upload_img(){
     var that=this
   wx.chooseImage({

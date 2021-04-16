@@ -4,12 +4,13 @@ export const applicantWXLogin_servers = (params) => {
   return HTTPREQUEST.post('jobs/pageInfo', params)
 }
 
-export const getJobFairList_servers = (params) => {
-  return HTTPREQUEST.get('h5/fair/jobFair/list', params)
+
+export const getServiceType_servers=(params)=>{
+  return HTTPREQUEST.get('/serviceType/select',params)
 }
-export const getUserInfo_servers=(params)=>{
-    return HTTPREQUEST.get('/sysUser/personal/center',params)
+export const getServiceDept_servers=(params)=>{
+  return HTTPREQUEST.get('/dept/select',params)
 }
-export const getprocedureStatus=(params)=>{
-  return HTTPREQUEST.get('/procedureStatus/detail',params)
+export const getclassify_servers=(params)=>{
+  return HTTPREQUEST.post('/typeChild/mobile/all',params)
 }

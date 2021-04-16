@@ -31,6 +31,7 @@ Page({
           type : "公共资源"
       }
     })
+    this.getClassifyInfo()
   },
   setindex1(){
     this.setData({
@@ -41,13 +42,17 @@ Page({
           type : "政务热线"
       }
     })
+    this.getClassifyInfo()
   },
-  watch:{
-    'params':function(newvalue){
-      // console.log(newvalue)
-      this.getClassifyInfo()
-    }
-  },
+  // watch:{
+  //   'params':function(newvalue){
+  //     console.log(newvalue)
+  //     // this.setData({
+  //     //   params:newvalue
+  //     // })
+  //     // this.getClassifyInfo()
+  //   }
+  // },
   setindex2(){
     this.setData({
       currentindex:2,
@@ -57,6 +62,7 @@ Page({
           type : "便民服务"
       }
     })
+    this.getClassifyInfo()
   },
   getClassifyInfo(){
     var that=this
@@ -83,7 +89,7 @@ Page({
    */
   onLoad: function (options) {
     this.getClassifyInfo()
-    getApp().setWatcher(this)
+    // getApp().setWatcher(this)
   },
 
   /**

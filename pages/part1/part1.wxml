@@ -31,21 +31,21 @@
 
     <!-- table -->
           <view class="table">
-      <view class="tr bg-w tr4">
-      <view class="th th1">序号</view>
-      <view class="th">材料名称</view>
-      <view class="th">表格下载</view>
-      <view class="th ">详情</view>
+      <view class="tr bg-w  ">
+      <view class="th th10 common">序号</view>
+      <view class="th th11 common">材料名称</view>
+      <view class="th th12 common">表格下载</view>
+      <view class="th th13 common">详情</view>
       </view>
       <block wx:for="{{tablelist}}" wx:key="id">
 
 
         <view class="tr">
-      <view class="td td1">{{index+1}}</view>
-      <view class="td">{{item.name}}</view>
-      <view class="td table_line" bindtap="uplodefiletable" data-index="{{item}}">实例样表</view>
-      <view wx:if="{{item.isshow}}" class="td table_line" id="item1" bindtap="replaceInfo" data-index="{{index}}">{{item.content}}</view>
-      <view wx:else class="td table_line" id="item1" bindtap="replaceInfo" data-index="{{index}}">查看更多</view>
+      <view class="td td10">{{index+1}}</view>
+      <view class="td  td11">{{item.name}}</view>
+      <view class="td td12 table_line" bindtap="uplodefiletable" data-index="{{item}}">实例样表</view>
+      <view wx:if="{{item.isshow}}" class="td td13 table_line"  bindtap="replaceInfo" data-index="{{index}}">{{item.content}}</view>
+      <view wx:else class="td th13 table_line"  bindtap="replaceInfo" data-index="{{index}}">查看更多</view>
       </view>
 
       </block>
@@ -58,20 +58,20 @@
     <view class="part1_middle_text">办理流程</view>
     <!-- table -->
     <view class="table">
-      <view class="tr bg-w tr4">
-      <view class="th th1">序号</view>
-      <view class="th">办理环节</view>
-      <view class="th">办理时限</view>
-      <view class="th ">审批标准</view>
+      <view class="tr bg-w">
+      <view class="th th1 common">序号</view>
+      <view class="th th2 common">办理环节</view>
+      <view class="th th3 common">办理时限</view>
+      <view class="th th4 common">审批标准</view>
       </view>
       <block wx:for="{{tablelist2}}" wx:key="id">
 
 
         <view class="tr">
-      <view class="td td1">{{index+1}}</view>
-      <view class="td">{{item.link}}</view>
-      <view class="td ">{{item.timeLimit}}</view>
-      <view class="td ">{{item.standard}}</view>
+      <view class="td td1 ">{{index+1}}</view>
+      <view class="td td2 ">{{item.link}}</view>
+      <view class="td td3">{{item.timeLimit}}</view>
+      <view class="td td4 ">{{item.standard}}</view>
       </view>
 
       </block>
@@ -85,3 +85,4 @@
       <button style="color:#FFF; background: #0091FF; width:654rpx;border-radius: 15rpx;line-height:80rpx" bindtap="gopart2">下一步</button>
     </view>
 </view>
+

@@ -1,20 +1,36 @@
 
 <view class="leixing_container">
     <view class="leixing_header">
-      <view class="leixing_header_item">
-        <view>类型</view>
-        <image class="leixing_header_item_img"  src="../../img/mine_img/三角形.png"></image>
+
+      <view class="leixing_header_item"> 
+        <picker bindchange="bindPickerChange1" value="{{index}}" range="{{serviceTypeItemLIst}}" mode = "selector" >
+      <view class="picker">
+     <text wx:if="{{isshow1===false}}" class="typeclass">类型</text> <text class="typeclass" wx:else>{{serviceTypeItemLIst[index1]}}</text> 
+     <image class="leixing_header_item_img"  src="../../img/mine_img/sanjiaoxing.png"></image>
+      </view>
+      
+      </picker>
       </view>
 
-      <view class="leixing_header_item">
-        <view>部门</view>
-        <image class="leixing_header_item_img" src="../../img/mine_img/三角形.png"></image>
+      <view class="leixing_header_item"> 
+        <picker bindchange="bindPickerChange2" value="{{index}}" range="{{serviceDeptItemLIst}}" mode = "selector" >
+      <view class="picker">
+     <text wx:if="{{isshow2===false}}" class="typeclass">部门</text> <text class="typeclass" wx:else>{{serviceDeptItemLIst[index2]}}</text> 
+     <image class="leixing_header_item_img"  src="../../img/mine_img/sanjiaoxing.png"></image>
       </view>
-
-      <view class="leixing_header_item">
-        <view>标签</view>
-        <image class="leixing_header_item_img" src="../../img/mine_img/三角形.png"></image>
+      
+      </picker>
       </view>
+<!-- 
+      <view class="leixing_header_item">
+        <picker bindchange="bindPickerChange3" value="{{index}}" range="{{openlist}}" mode = "selector" >
+      <view class="picker">
+     <text wx:if="{{isshow3===false}}" class="typeclass">标签</text> <text class="typeclass" wx:else>{{openlist[index3]}}</text> 
+     <image class="leixing_header_item_img"  src="../../img/mine_img/sanjiaoxing.png"></image>
+      </view>
+      
+      </picker>
+      </view> -->
 
       <view  class="leixing_header_item " id="wenzi" bindtap="gosousuo">搜索</view>
 

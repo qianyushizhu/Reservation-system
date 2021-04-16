@@ -1,22 +1,22 @@
 <!--pages/changeuser/changeuser.wxml-->
 <view class="changeInfo_container">
   <view class="changeInfo_container_item">
-    <image src="../../img/mine_img/姓名@2x.png"></image><input type="text" bindinput="getinfo1"  value="{{name}}"></input>
+    <image src="../../img/mine_img/xingming.png"></image><input type="text" bindinput="getinfo1"  value="{{name}}"></input>
   </view>
   <view class="changeInfo_container_item">
-    <image src="../../img/mine_img/电话@2x.png"></image><input type="text" bindinput="getinfo2" value="{{phone}}"></input>
+    <image src="../../img/mine_img/dianhua.png"></image><input type="text" bindinput="getinfo2" bindblur="checkphone" value="{{phone}}"></input>
   </view>
   <view class="changeInfo_container_item">
-    <image src="../../img/mine_img/企业认证@2x.png"></image>
-    <image class="qiyeimg" src="../../img/mine_img/批量认证@2x.png"></image>
+    <image src="../../img/mine_img/qiyerenzheng.png"></image>
+    <image class="qiyeimg" src="../../img/mine_img/piliangrenzheng.png"></image>
     <input type="text" bindinput="getinfo3"  value="{{company}}"></input> 
   </view>
 
   <view>
      <view class="yijian_bottom_text">请上传企业照片</view>
-     <view class="yijian_bottom_container" bindtap="chengepload_img">
-       <image wx:if="{{yijianissuccess===false}}" class="yijian_bottom_img" src="../../img/mine_img/jia2.png"></image>
-       <image wx:else class="yijian_bottom_img" src="../../img/mine_img/wancheng.png"></image>
+     <view class="yijian_bottom_container">
+       <image wx:if="{{yijianissuccess===false}}" class="yijian_bottom_img"  bindtap="chengepload_img" src="../../img/mine_img/jia2.png"></image>
+       <image wx:else class="yijian_bottom_img" bindlongpress="deleted" bindtap="preview" data-src="{{headImg[0]}}"  src="{{headImg[0]}}"></image>
      </view>
    </view>
    <button class="yijian_button" form-type="submit"  bindtap="changeuplodeinfo">修改</button>

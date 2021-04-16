@@ -26,10 +26,11 @@ align-items: center; */
   left: 60rpx;
   top: 50rpx;
 }
+.typeclass{
+  margin-right: 15rpx;
+}
 .leixing_header_item_img{
-  position: relative;
-  left: 58rpx;
-  top: -36rpx;
+ 
 }
 #wenzi{
   color: #0091FF;

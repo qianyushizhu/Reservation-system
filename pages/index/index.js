@@ -5,7 +5,35 @@ const app = getApp()
 Page({
   data: {
       swiperInfo:[],
-      serviceTypeInfo:[]
+      serviceTypeInfo:[],
+      quickService:[
+        {
+          img:'../../img/在线办理小程序首页2.0图标/快捷服务1.png'
+        },
+        {
+          img:'../../img/在线办理小程序首页2.0图标/快捷服务2.png'
+        }
+      ],
+      publicService:[],
+      legalPersonService:[],
+      currentindex:1,
+      personalService:[]
+
+  },
+  setindex1(){
+    this.setData({
+      currentindex:1
+    })
+  },
+  setindex2(){
+    this.setData({
+      currentindex:2
+    })
+  },
+  setindex3(){
+    this.setData({
+      currentindex:3
+    })
   },
   goswiperinfo(){
     wx.navigateTo({
@@ -33,14 +61,34 @@ Page({
    success(res){
       console.log(res)
      if(res.data.code == 0){
+       let resuit=[
+        {
+          img:'../../img/在线办理小程序首页2.0图标/快捷服务1.png',
+          name:'创新名城建设一号文'
+        },
+        {
+          img:'../../img/在线办理小程序首页2.0图标/快捷服务2.png',
+          name:'特色服务'
+        }
+      ]
+       for(let i=0;i<res.data.data.quickService.length;i++){
+        resuit[i].id=res.data.data.quickService[i].id
+        resuit[i].icon=res.data.data.quickService[i].icon
+       }
+         console.log(resuit)
+       
       that.setData({
         swiperInfo:res.data.data.notice,
-        serviceTypeInfo:res.data.data.serviceType
+        serviceTypeInfo:res.data.data.setMealService,
+        quickService:resuit,
+        personalService:res.data.data.personalService,
+        publicService:res.data.data.publicService,
+        legalPersonService:res.data.data.legalPersonService,
+        
        })
+      console.log(that.data.quickService)
      }
-     else{
-       
-     }
+     
      
      
    

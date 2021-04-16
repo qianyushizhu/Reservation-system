@@ -4,13 +4,13 @@
 </view>
 <view class="main_container">
   <view class="mine_header">
-  <button wx:if="{{islogin===false}}" class="mine_header_button" bindtap="goLogin" bindgetuserinfo="handleGetUserInfo" open-type="getUserInfo">请登录</button>
+  <button wx:if="{{islogin===false}}" class="mine_header_button"  catchtap="getUserProfile">请登录</button>
   <view wx:elif='{{islogin===true}}' class="main_container_header_top">
-    <image class="main_container_header_top_img" src="{{userInfo.headImg}}"></image>
+    <image class="main_container_header_top_img" src="{{headImg}}"></image>
     <view class="main_container_header_top_text">
-      <view class="main_container_header_top_text_name">{{userInfo.name}}</view>
-      <view class="main_container_header_top_text_conmment">{{userInfo.phone}}</view>
-      <view class="main_container_header_top_text_conmment">{{userInfo.company}}</view>
+      <view class="main_container_header_top_text_name">{{name}}</view>
+      <view class="main_container_header_top_text_conmment">{{phone}}</view>
+      <view class="main_container_header_top_text_conmment">{{company}}</view>
     </view>
     <image class="main_container_header_top_sezhi" src="../../img/mine_img/shezhi.png" bindtap="gochangeuser"></image>
     <image class="qiyebiaozhi" src="../../img/mine_img/qiyebiaozhi.png"></image>

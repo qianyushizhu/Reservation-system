@@ -221,6 +221,6 @@
   width: 52rpx;
   height: 52rpx;
  position: relative;
- left: -220rpx;
- top: 150rpx;
+ left: -267rpx;
+ top: 129rpx;
 }
